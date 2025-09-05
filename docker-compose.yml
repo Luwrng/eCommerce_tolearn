@@ -1,0 +1,34 @@
+version: "3"
+
+services:
+  backend:
+    build:
+      context: ./be
+    ports:
+      - "5000:5000"
+    networks:
+      - app-network
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./fe
+    ports:
+      - "80:80"
+    networks:
+      - app-network
+
+  db:
+    image: mongo:latest
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mongo_data:
