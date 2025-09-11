@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .bg-gold {
+      background-color: #B88E2F !important;
+    }
+    .hover\:bg-gold:hover {
+      background-color: #B88E2F !important;
+    }
+    .focus-visible\:ring-gold:focus-visible {
+      --tw-ring-color: #B88E2F !important;
+    }
+    .text-gold {
+      color: #B88E2F !important;
+    }
+  }
+  
